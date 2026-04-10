@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000/api/auth';
+const BASE_URL = 'https://task-manager-8snp.onrender.com/api/auth';
 
 export const registerAPI = async (data) => {
   const res = await fetch(`${BASE_URL}/register`, {
