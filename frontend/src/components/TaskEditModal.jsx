@@ -20,7 +20,7 @@ export default function TaskEditModal({
   const isCreator = task.createdBy?._id === currentUser?.id;
   const isAssignee = task.assignedTo?._id === currentUser?.id;
 
-  //   UI permissions (disable inputs) 
+  //   UI permissions (disable inputs)
   let disableTitle = false;
   let disableDescription = false;
   let disableStatus = false;
@@ -98,59 +98,31 @@ export default function TaskEditModal({
   };
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: 'rgba(0,0,0,0.4)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <div
-        style={{
-          background: '#fff',
-          padding: 20,
-          borderRadius: 10,
-          width: 400,
-        }}
-      >
+    <div className="modal-overlay">
+      <div className="modal-box">
         <h3>Edit Task</h3>
 
         <input
+          className={`modal-input ${disableTitle ? 'disabled-field' : ''}`}
           placeholder="Title"
           value={form.title}
           disabled={disableTitle}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
-          style={{
-            width: '100%',
-            marginBottom: 10,
-            opacity: disableTitle ? 0.5 : 1,
-          }}
         />
 
         <textarea
+          className={`modal-textarea ${disableDescription ? 'disabled-field' : ''}`}
           placeholder="Description"
           value={form.description}
           disabled={disableDescription}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
-          style={{
-            width: '100%',
-            marginBottom: 10,
-            opacity: disableDescription ? 0.5 : 1,
-          }}
         />
 
         <select
+          className={`modal-select ${disableStatus ? 'disabled-field' : ''}`}
           value={form.status}
           disabled={disableStatus}
           onChange={(e) => setForm({ ...form, status: e.target.value })}
-          style={{
-            width: '100%',
-            marginBottom: 10,
-            opacity: disableStatus ? 0.5 : 1,
-          }}
         >
           <option value="Todo">Todo</option>
           <option value="In Progress">In Progress</option>
@@ -158,22 +130,22 @@ export default function TaskEditModal({
         </select>
 
         <input
+          className={`modal-date ${disableDueDate ? 'disabled-field' : ''}`}
           type="date"
           value={form.dueDate}
           disabled={disableDueDate}
           onChange={(e) => setForm({ ...form, dueDate: e.target.value })}
-          style={{
-            width: '100%',
-            marginBottom: 10,
-            opacity: disableDueDate ? 0.5 : 1,
-          }}
         />
 
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p className="modal-error">{error}</p>}
 
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10 }}>
-          <button onClick={onClose}>Cancel</button>
-          <button onClick={handleSave}>Save</button>
+        <div className="modal-buttons">
+          <button className="modal-btn cancel" onClick={onClose}>
+            Cancel
+          </button>
+          <button className="modal-btn save" onClick={handleSave}>
+            Save
+          </button>
         </div>
       </div>
     </div>
