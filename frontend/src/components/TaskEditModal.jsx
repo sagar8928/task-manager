@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { updateTaskAPI } from '../api/task.api';
+import './TaskEditModal.css';
 
 export default function TaskEditModal({
   task,
