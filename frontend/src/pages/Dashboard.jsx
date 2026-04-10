@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { fetchTaskAPI, deleteTaskAPI } from '../api/task.api';
 import TaskForm from './TaskForm.jsx';
 import TaskEditModal from '../components/TaskEditModal';
@@ -12,23 +12,23 @@ export default function Dashboard() {
 
   const { user } = useAuth();
 
-  const loadTasks = async () => {
+  const loadTasks = useCallback(async () => {
     setLoading(true);
-
-    const data = await fetchTaskAPI();
-
-    if (Array.isArray(data)) {
-      setTasks(data);
-    } else {
-      setTasks([]);
+    try {
+      const data = await fetchTaskAPI();
+      if (Array.isArray(data)) {
+        setTasks(data);
+      } else {
+        setTasks([]);
+      }
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
-  };
+  }, []);
 
   useEffect(() => {
     loadTasks();
-  }, []);
+  }, [loadTasks]);
 
   const handleDelete = async (id) => {
     await deleteTaskAPI(id);
