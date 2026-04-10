@@ -96,12 +96,12 @@ The frontend runs on `http://localhost:5173`
 
 ### Auth
 
-| Method | Endpoint             | Description                | Auth required |
-| ------ | -------------------- | -------------------------- | ------------- |
-| POST   | `/api/auth/register` | Register new user          | No            |
-| POST   | `/api/auth/login`    | Login user                 | No            |
-| POST   | `/api/auth/logout`   | Logout user                | Yes           |
-| GET    | `/api/auth/profile`  | Get logged-in user profile | Yes           |
+| Method | Endpoint             | Description                | 
+| ------ | -------------------- | -------------------------- | 
+| POST   | `/api/auth/register` | Register new user          |
+| POST   | `/api/auth/login`    | Login user                 | 
+| POST   | `/api/auth/logout`   | Logout user                | 
+| GET    | `/api/auth/profile`  | Get logged-in user profile | 
 
 ### Tasks
 
@@ -149,7 +149,7 @@ Email:    evan@gmail.com
 Password: evan1234
 ```
 
-> To test assigned task flow: log in as `sagar@gmail.com`, create a task and assign it to can use name `pritesh` or `evan` or if you want email as `pritesh@gmail.com` . Then log in as Pritesh to update the status.
+> To test assigned task flow: log in as `sagar@gmail.com`, create a task and assign it to can use name `pritesh` or `evan` or you can also use email to `pritesh@gmail.com` . Then log in as Pritesh to update the status.
 
 ---
 
@@ -165,7 +165,7 @@ Password: evan1234
 
 ## Known Limitations
 
-- Email is validated by format (regex) on registration, but no verification email is sent
+- Email is validated by format (regex) on registration
 - Assign to field accepts name or email (must match exactly as stored in DB)
 
 ---
