@@ -7,16 +7,17 @@ import taskRoutes from './routes/task.routes.js';
 
 const app = express();
 
-app.use(express.json());
-app.use(cookieParser());
-
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'https://task-manager-three-eta-76.vercel.app',
+    ],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'], 
   }),
 );
+app.use(express.json());
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
   res.send('API is running...');
