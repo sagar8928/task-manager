@@ -27,7 +27,7 @@ export default function TaskForm({ loadTasks }) {
 
     setForm({ title: '', description: '', dueDate: '', assignedTo: '' });
     loadTasks();
-    navigate('/dashboard');
+    navigate('/');
   };
 
   return (
