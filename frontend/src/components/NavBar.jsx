@@ -16,6 +16,7 @@ export default function Navbar() {
       <Link to="/" className="navbar-brand">
         TaskManager
       </Link>
+      {/*  */}
 
       <div className="navbar-center">
         <Link to="/taskform" className="navbar-link">

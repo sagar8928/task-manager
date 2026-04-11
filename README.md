@@ -6,7 +6,7 @@ A full-stack Task Management System built with the MERN stack. Supports JWT-base
 
 ## Live Demo
 
-> **Deployed App:** `https://your-deployed-app.vercel.app`  
+> **Deployed App:** `task-manager-three-eta-76.vercel.app`  
 > **GitHub Repo:** `https://github.com/sagar8928/task-manager` 
 
 ---
@@ -165,7 +165,7 @@ Password: evan1234
 
 ## Known Limitations
 
-- Email is validated by format (regex) on registration
+- Email is validated by format (regex) on registration, but no verification email is sent
 - Assign to field accepts name or email (must match exactly as stored in DB)
 
 ---

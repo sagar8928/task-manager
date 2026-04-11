@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const data = await profileAPI();
 
-        if (data) {
+        if (data && data.id && data.email) {
           setUser(data);
         } else {
           setUser(null);
@@ -28,8 +28,14 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const logout = async () => {
-    await logoutAPI();
-    setUser(null);
+    try {
+      await logoutAPI();
+      setUser(null);
+      console.log('Logged out successfully');
+    } catch (error) {
+      console.error('Logout error:', error);
+      setUser(null);
+    }
   };
 
   return (
