@@ -3,7 +3,7 @@ import { createTaskAPI } from '../api/task.api.js';
 import './TaskForm.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function TaskForm({ loadTasks }) {
+export default function TaskForm() {
   const [form, setForm] = useState({
     title: '',
     description: '',
@@ -26,7 +26,7 @@ export default function TaskForm({ loadTasks }) {
     await createTaskAPI(payload);
 
     setForm({ title: '', description: '', dueDate: '', assignedTo: '' });
-    loadTasks();
+    
     navigate('/');
   };
 
