@@ -26,7 +26,7 @@ export default function TaskForm() {
     await createTaskAPI(payload);
 
     setForm({ title: '', description: '', dueDate: '', assignedTo: '' });
-    
+
     navigate('/');
   };
 

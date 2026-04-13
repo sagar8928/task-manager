@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { fetchTaskAPI, deleteTaskAPI } from '../api/task.api';
-import TaskForm from './TaskForm.jsx';
+// import TaskForm from './TaskForm.jsx';
 import TaskEditModal from '../components/TaskEditModal';
 import { useAuth } from '../context/useAuth.jsx';
 import './Dashboard.css';
@@ -48,7 +48,10 @@ export default function Dashboard() {
         {loading ? (
           <p className="loading-text">Loading tasks...</p>
         ) : tasks.length === 0 ? (
-          <p className="empty-text">No tasks found.</p>
+          <div>
+            <p className="empty-text">No tasks available.</p>
+            <p className="empty-text">Click on taskFrom to create new task</p>
+          </div>
         ) : (
           <div className="task-grid">
             {tasks.map((task) => (

@@ -33,9 +33,9 @@
 .loading-text,
 .empty-text {
   padding: 20px;
-  background: rgba(244, 243, 236, 0.5);
-  border: 1px dashed #e5e4e7;
-  border-radius: 14px;
+  /* background: rgba(244, 243, 236, 0.5); */
+  /* border: 1px dashed #e5e4e7; */
+  /* border-radius: 14px; */
   font-size: 15px;
   text-align: center;
 }

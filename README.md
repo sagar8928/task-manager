@@ -7,7 +7,7 @@ A full-stack Task Management System built with the MERN stack. Supports JWT-base
 ## Live Demo
 
 > **Deployed App:** `task-manager-three-eta-76.vercel.app`  
-> **GitHub Repo:** `https://github.com/sagar8928/task-manager` 
+> **GitHub Repo:** `https://github.com/sagar8928/task-manager`
 
 ---
 
@@ -36,12 +36,42 @@ A full-stack Task Management System built with the MERN stack. Supports JWT-base
 
 ---
 
+
+
+## Base URL Configuration
+
+The frontend uses two possible base URLs depending on your environment. In your frontend code, switch between them as needed:
+
+### Auth Base URL
+
+```javascript
+// ✅ Use this for the live deployed backend (Render)
+const BASE_URL = 'https://task-manager-8snp.onrender.com/api/auth';
+
+// ✅ Use this for local development
+// const BASE_URL = 'http://localhost:5000/api/auth';
+```
+
+### Tasks Base URL
+
+```javascript
+// ✅ Use this for the live deployed backend (Render)
+const BASE_URL = 'https://task-manager-8snp.onrender.com/api/tasks';
+
+// ✅ Use this for local development
+// const BASE_URL = 'http://localhost:5000/api/tasks';
+```
+
+> **Note:** When running locally, uncomment the `localhost` line and comment out the Render URL. When deploying or testing the live app, use the Render URLs.
+
+---
+
 ## Setup Instructions
 
 ### Prerequisites
 
 - Node.js v18+
-- MongoDB Atlas account 
+- MongoDB Atlas account
 - Git
 
 ---
@@ -96,12 +126,12 @@ The frontend runs on `http://localhost:5173`
 
 ### Auth
 
-| Method | Endpoint             | Description                | 
-| ------ | -------------------- | -------------------------- | 
+| Method | Endpoint             | Description                |
+| ------ | -------------------- | -------------------------- |
 | POST   | `/api/auth/register` | Register new user          |
-| POST   | `/api/auth/login`    | Login user                 | 
-| POST   | `/api/auth/logout`   | Logout user                | 
-| GET    | `/api/auth/profile`  | Get logged-in user profile | 
+| POST   | `/api/auth/login`    | Login user                 |
+| POST   | `/api/auth/logout`   | Logout user                |
+| GET    | `/api/auth/profile`  | Get logged-in user profile |
 
 ### Tasks
 

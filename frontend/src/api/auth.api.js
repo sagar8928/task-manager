@@ -1,4 +1,5 @@
 const BASE_URL = 'https://task-manager-8snp.onrender.com/api/auth';
+// const BASE_URL = 'http://localhost:5000/api/auth';
 // http://localhost:5000/api/auth
 // https://task-manager-8snp.onrender.com/api/auth
 
